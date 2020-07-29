@@ -52,6 +52,34 @@ class Covid19 {
             endDate
         )
     }
+    async getCovidKRData(rows = 10, pageNo = 1, startDate = moment().subtract(1, 'month').format('yyyyMMDD'),
+        endDate = moment().format('yyyyMMDD'),select = 0) {
+        
+        return this.requestCovid(
+            Covid19.RequestInfo.Path.getCovid19InfStateJson,
+            rows,
+            pageNo,
+            startDate,
+            endDate
+        ).then(
+            function(response) {
+                let resultValue = 0;
+                let dataCnt = response.totalCount;
+                switch(select){ //0 확진자수 1 완치자수 2 사망수
+                    case 0:
+                        resultValue = response.items.item[0].decideCnt - response.items.item[dataCnt-1].decideCnt;
+                        break;
+                    case 1:
+                        resultValue = response.items.item[0].clearCnt - response.items.item[dataCnt-1].clearCnt;
+                        break;
+                    case 2:
+                        resultValue = response.items.item[0].deathCnt - response.items.item[dataCnt-1].deathCnt;
+                        break;
+                }
+                return resultValue;
+            }
+        )
+    }
 
     async requestCovid(requestBaseURL, rows, pageNo, startDate, endDate) {
         const requestURL = requestBaseURL +
