@@ -5,15 +5,10 @@ KR COVID-19 Informative Repository (Kangwon National University, CSE)
 - Node.js에서 손쉽게 사용가능한 COVID-19(코로나바이러스-19) API 패키지
 - 강원대학교 SW학습공동체 오픈소스 프로젝트 팀 **Bear Soup**
 
-# 목차
-- 설치방법
-- 사용법
-- 함수
-- 라이선스
-- 기여
-
 # 설치방법
-작성중
+```bash
+npm install covid19-kr
+```
 
 # 사용법
 ```javascript
@@ -26,6 +21,20 @@ var options =  {
 var covidInstance = covid.Covid19KR(options);
 ```
 - COVID-19 인스턴스 생성 후 getCovidKRStatus와 getCovidKRByState로 데이터 Fetch
+
+## 함수 내용   
+- getCovidStatisticsBetweenClear(begin, end)
+	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 완치자 수를 알 수 있습니다.
+- getCovidStatisticsBetweenSick(begin, end)
+	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 확진자 수를 알 수 있습니다.
+- getCovidStatisticsBetweenDeath(begin, end)
+	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 사망자 수를 알 수 있습니다.
+- getCovidStatisticsDayClear(day)
+	- day(날짜 yyyymmdd) 당일동안 발생한 완치자 수를 알 수 있습니다.
+- getCovidStatisticsDaySick(day)
+	- day(날짜 yyyymmdd) 당일동안 발생한 확진자 수를 알 수 있습니다.
+- getCovidStatisticsDayDeath(day)
+	- day(날짜 yyyymmdd) 당일동안 발생한 사망자 수를 알 수 있습니다.
 
 # 라이선스
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
