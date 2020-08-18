@@ -45,15 +45,14 @@ async getCovidStatisticsDayDeath(day)
 
 # 사용예제
 ```javascript
-console.log("완치자 수: " + getCovidStatisticsBetweenClear(20200814, 20200818) + " 명")
-console.log("확진자 수: " + getCovidStatisticsBetweenSick(20200814, 20200818) + " 명")
-console.log("사망자 수: " + getCovidStatisticsDayDeath(20200815) + " 명")
+const covid19-kr = require('covid19-kr')
+var begin = 20200814, end = 20200818
+var sick = covid19-kr().getCovidStatisticsBetweenSick(begin, end)
+console.log(begin + " ~ " + end + "기간 내 확진자 수: " + sick + " 명")
 ```
 ```bash
 $ test.js
-완치자수: 71 명
-확진자수: 888 명
-사망자수: 0 명
+20200814 ~ 20200818 기간 내 확진자 수: 888 명
 ```
 
 # 라이선스
