@@ -43,6 +43,18 @@ async getCovidStatisticsDayDeath(day)
 // day(날짜 yyyymmdd) 당일동안 발생한 사망자 수를 알 수 있습니다.
 ```
 
+# 사용예제
+```javascript
+console.log("완치자 수: " + getCovidStatisticsBetweenClear(20200814, 20200818) + " 명")
+console.log("확진자 수: " + getCovidStatisticsBetweenSick(20200814, 20200818) + " 명")
+console.log("사망자 수: " + getCovidStatisticsDayDeath(20200815) + " 명")
+```
+```bash
+$ test.js
+완치자수: 71 명
+확진자수: 888 명
+사망자수: 0 명
+```
 
 # 라이선스
 - [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
