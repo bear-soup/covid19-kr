@@ -90,7 +90,7 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var isolClearCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
@@ -120,7 +120,7 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var defCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
@@ -150,7 +150,7 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
@@ -181,12 +181,12 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
-                var days = end-begin
+                var days = day-begin
                 for(var i = 18; i < jsonArray.length; i = i + (days * 19))
                 {
                     var array = JSON.stringify(jsonArray[i])
@@ -212,12 +212,12 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
-                var days = end-begin
+                var days = day-begin
                 for(var i = 18; i < jsonArray.length; i = i + (days * 19))
                 {
                     var array = JSON.stringify(jsonArray[i])
@@ -243,12 +243,12 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function(error, response, body) {     
+        request(requestURL, function(error, response, body) {     
             parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
                 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
-                var days = end-begin
+                var days = day-begin
                 for(var i = 18; i < jsonArray.length; i = i + (days * 19))
                 {
                     var array = JSON.stringify(jsonArray[i])
