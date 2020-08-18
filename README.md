@@ -3,6 +3,7 @@ KR COVID-19 Informative Repository (Kangwon National University, CSE)
 
 # 개요
 > Node.js에서 손쉽게 사용가능한 COVID-19(코로나바이러스-19) API 패키지 <br>
+> 공공 데이터 포털 API를 이용한 데이터 재가공 제공 <br>
 > 강원대학교 SW학습공동체 오픈소스 프로젝트 팀 **Bear Soup**
 
 # 설치방법
@@ -15,7 +16,7 @@ $ npm install covid19-kr
 var covid = require('covid19-kr'); // 또는 require('.')으로 현재 폴더 내 파일 불러오기
 
 var options =  {
-    apiKey: "<base64 apiKey>"
+    apiKey: "<base64 apiKey>" // 공공데이터 포털 '보건복지부_코로나19 감염_현황' API Key
 };
 
 var covidInstance = covid.Covid19KR(options);
@@ -45,10 +46,20 @@ async getCovidStatisticsDayDeath(day)
 
 # 사용예제
 ```javascript
-const covid19-kr = require('covid19-kr')
-var begin = 20200814, end = 20200818
-var sick = covid19-kr().getCovidStatisticsBetweenSick(begin, end)
-console.log(begin + " ~ " + end + "기간 내 확진자 수: " + sick + " 명")
+const covid = require('covid19-kr');
+
+const options = {
+    apiKey: "<API Key>"
+};
+let covidInstance = covid.Covid19KR(options);
+covidInstance.getCovidStatisticsBetweenSick(20200815, 20200818).then(
+        function (data) {
+        // 성공시 
+
+    }, function (error) {
+        // 실패시
+         
+    });
 ```
 ```bash
 $ test.js
