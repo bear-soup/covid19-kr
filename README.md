@@ -2,12 +2,12 @@
 KR COVID-19 Informative Repository (Kangwon National University, CSE)
 
 # 개요
-- Node.js에서 손쉽게 사용가능한 COVID-19(코로나바이러스-19) API 패키지
-- 강원대학교 SW학습공동체 오픈소스 프로젝트 팀 **Bear Soup**
+> Node.js에서 손쉽게 사용가능한 COVID-19(코로나바이러스-19) API 패키지 <br>
+> 강원대학교 SW학습공동체 오픈소스 프로젝트 팀 **Bear Soup**
 
 # 설치방법
 ```bash
-npm install covid19-kr
+$ npm install covid19-kr
 ```
 
 # 사용법
@@ -19,25 +19,33 @@ var options =  {
 };
 
 var covidInstance = covid.Covid19KR(options);
+// 이후에 아래함수들을 사용해 데이터 Fetch
 ```
-- COVID-19 인스턴스 생성 후 getCovidKRStatus와 getCovidKRByState로 데이터 Fetch
 
-## 함수 내용   
-- getCovidStatisticsBetweenClear(begin, end)
-	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 완치자 수를 알 수 있습니다.
-- getCovidStatisticsBetweenSick(begin, end)
-	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 확진자 수를 알 수 있습니다.
-- getCovidStatisticsBetweenDeath(begin, end)
-	- begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 사망자 수를 알 수 있습니다.
-- getCovidStatisticsDayClear(day)
-	- day(날짜 yyyymmdd) 당일동안 발생한 완치자 수를 알 수 있습니다.
-- getCovidStatisticsDaySick(day)
-	- day(날짜 yyyymmdd) 당일동안 발생한 확진자 수를 알 수 있습니다.
-- getCovidStatisticsDayDeath(day)
-	- day(날짜 yyyymmdd) 당일동안 발생한 사망자 수를 알 수 있습니다.
+# 함수
+```javascript
+async getCovidStatisticsBetweenClear(begin, end)
+//begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 완치자 수를 알 수 있습니다.
+
+async getCovidStatisticsBetweenSick(begin, end)
+// begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 확진자 수를 알 수 있습니다.
+
+async getCovidStatisticsBetweenDeath(begin, end)
+// begin(날짜 yyyymmdd) 와 end(날짜 yyyymmdd) 사이에 발생한 사망자 수를 알 수 있습니다.
+
+async getCovidStatisticsDayClear(day)
+// day(날짜 yyyymmdd) 당일동안 발생한 완치자 수를 알 수 있습니다.
+
+async getCovidStatisticsDaySick(day)
+// day(날짜 yyyymmdd) 당일동안 발생한 확진자 수를 알 수 있습니다.
+
+async getCovidStatisticsDayDeath(day)
+// day(날짜 yyyymmdd) 당일동안 발생한 사망자 수를 알 수 있습니다.
+```
+
 
 # 라이선스
-[GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
+- [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt)
 
 # 기여
 - [jungin500](https://github.com/jungin500): [Node.js 및 npm 레지스트리 스터디 및 연구](https://github.com/jungin500/covid19-packaging-study)
