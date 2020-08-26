@@ -75,8 +75,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var isolClearCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
@@ -103,8 +103,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var defCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
@@ -131,8 +131,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
@@ -160,8 +160,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
@@ -189,8 +189,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
@@ -218,8 +218,8 @@ class Covid19 {
 
         var parser = new xml2js.Parser()
         var deathCnt = 0
-        request(url, function (error, response, body) {
-            parser.parseString(body, function (err, result) {
+        request(requestURL, function(error, response, body) {     
+            parser.parseString(body, function(err,result){
                 var obj = JSON.stringify(result)
 
                 var jsonArray = JSON.parse(obj).response.body[0].items[0].item
